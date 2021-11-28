@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace CrudLibraryTests
 {
-    public partial class TestCreateForm : CrudLibrary.CreateForm
+    public partial class NoAutoIncCreateForm : CrudLibrary.CreateForm
     {
-        public TestCreateForm()
+        public NoAutoIncCreateForm()
         {
             InitializeComponent();
         }
 
         private void button_create_Click(object sender, EventArgs e)
         {
-            Object_Create_v(new Test());
+            Object_Create_v(new noAutoInc(), false);
         }
     }
 }
