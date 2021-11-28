@@ -150,6 +150,7 @@ namespace CrudLibrary
             //установили свойства класса
 
             return currentObject;
+            //вернули
         }
     }
 }

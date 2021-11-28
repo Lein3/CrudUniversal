@@ -17,9 +17,13 @@ namespace CrudLibrary
             InitializeComponent();
         }
 
-        public void SetElements(object currentObject)
-        {           
-            var properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual && a.Name != "ID");
+        public void SetElements(object currentObject, bool autoincrement = true)
+        {
+            dynamic properties;
+            if (autoincrement)
+                properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual && a.Name != "ID");
+            else
+                properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual);
             //установили текущие сущности и классы и таблицы и все это гавно
 
             List<object> currentValues = new List<object>();
@@ -71,9 +75,14 @@ namespace CrudLibrary
             //вставили данные
         }
 
-        public dynamic Object_Update(object currentObject)
+        public dynamic Object_Update_f(object currentObject, bool autoincrement = true)
         {
-            var properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual && a.Name != "ID");
+            dynamic properties;
+            if (autoincrement)
+                properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual && a.Name != "ID");
+            else
+                properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual);
+
             List<object> currentValues = new List<object>();
             foreach (var control in panel_main.Controls)
                 switch (control.GetType().Name)

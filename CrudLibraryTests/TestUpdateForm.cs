@@ -22,8 +22,7 @@ namespace CrudLibraryTests
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            Object_Update(kek);
-            Connection.db.SaveChanges();
+            Object_Update_v(kek);
         }
     }
 }
