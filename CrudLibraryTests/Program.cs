@@ -19,8 +19,8 @@ namespace CrudLibraryTests
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new NoAutoIncCreateForm());
-            //Application.Run(new TestUpdateForm(Connection.db.Test.Where(a => a.ID == 1).FirstOrDefault()));
-            Application.Run(new TestReadForm());
+            Application.Run(new TestUpdateForm(Connection.db.Test.Where(a => a.ID == 1).FirstOrDefault()));
+            //Application.Run(new TestReadForm());
         }
     }
 
