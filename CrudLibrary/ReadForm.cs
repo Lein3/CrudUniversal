@@ -76,5 +76,17 @@ namespace CrudLibrary
             currentPage = Convert.ToInt32(this.comboBox_page.SelectedIndex);
             this.dataGridView.DataSource = pages[currentPage].DisplayPage(currentQuery);
         }
+
+        public void Object_Delete(dynamic currentObject)
+        {           
+            var currentClass = currentObject.GetType();
+            var currentClassTable = InnerConnection.db.Set(currentClass);
+            currentClassTable.Attach(currentObject);
+            currentClassTable.Remove(currentObject);
+            InnerConnection.db.SaveChanges();
+            MessageBox.Show("Запись удалена");
+            DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

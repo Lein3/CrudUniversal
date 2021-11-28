@@ -93,6 +93,12 @@
     <Compile Include="TestCreateForm.Designer.cs">
       <DependentUpon>TestCreateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestReadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestReadForm.Designer.cs">
+      <DependentUpon>TestReadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="TestCreateForm.resx">
       <DependentUpon>TestCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestReadForm.resx">
+      <DependentUpon>TestReadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestUpdateForm.resx">
       <DependentUpon>TestUpdateForm.cs</DependentUpon>
