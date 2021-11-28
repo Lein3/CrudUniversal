@@ -91,11 +91,15 @@ namespace CrudLibrary
             //сохранили
         }
 
-        public dynamic Object_Create_f(object currentObject)
+        public dynamic Object_Create_f(object currentObject, bool autoincrement = true)
         {
             var currentClass = currentObject.GetType();
             var currentClassTable = InnerConnection.db.Set(currentClass);
-            var properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual && a.Name != "ID");
+            dynamic properties;
+            if (autoincrement)
+                properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual && a.Name != "ID");
+            else
+                properties = currentObject.GetType().GetProperties().Where(a => !a.GetMethod.IsVirtual);
             //установили текущие сущности и классы и таблицы и все это гавно
 
             List<object> currentValues = new List<object>();
